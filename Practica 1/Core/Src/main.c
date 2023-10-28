@@ -42,8 +42,9 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-uint8_t Led[]={0x0002, 0x004, 0x008};
-uint8_t delay = 200;
+uint8_t Led[]={0x0002, 0x004, 0x008}; //pines done estan conectado los Leds
+uint8_t delay = 200;                  //duracion del parpadeo
+uint8_t pos = 0;                      //Posicion del led encendido
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -94,12 +95,9 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	  for (int var = 0; var < 3; ++var) {
-		HAL_GPIO_WritePin(GPIOA, Led[var], 1);
-		HAL_Delay(delay);
-		HAL_GPIO_WritePin(GPIOA, Led[var], 0);
-		HAL_Delay(delay);
-	}
+	  HAL_GPIO_TogglePin(GPIOA, Led[pos]);
+	  HAL_Delay(delay);
+
 
     /* USER CODE END WHILE */
 
@@ -166,11 +164,11 @@ static void MX_GPIO_Init(void)
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOA, LED1_Pin|LED2_Pin|LED3_Pin, GPIO_PIN_RESET);
 
-  /*Configure GPIO pin : BUTTON_Pin */
-  GPIO_InitStruct.Pin = BUTTON_Pin;
-  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+  /*Configure GPIO pin : PA0 */
+  GPIO_InitStruct.Pin = GPIO_PIN_0;
+  GPIO_InitStruct.Mode = GPIO_MODE_IT_FALLING;
   GPIO_InitStruct.Pull = GPIO_PULLUP;
-  HAL_GPIO_Init(BUTTON_GPIO_Port, &GPIO_InitStruct);
+  HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
   /*Configure GPIO pins : LED1_Pin LED2_Pin LED3_Pin */
   GPIO_InitStruct.Pin = LED1_Pin|LED2_Pin|LED3_Pin;
@@ -179,12 +177,25 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
+  /* EXTI interrupt init*/
+  HAL_NVIC_SetPriority(EXTI0_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(EXTI0_IRQn);
+
 /* USER CODE BEGIN MX_GPIO_Init_2 */
 /* USER CODE END MX_GPIO_Init_2 */
 }
 
 /* USER CODE BEGIN 4 */
+void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
+{
+	for (int var = 0; var < 3; ++var) {
+		HAL_GPIO_WritePin(GPIOA, Led[var], 0);
+	}
 
+	if (pos < 2) {
+		pos++;
+	}else{pos = 0;}
+}
 /* USER CODE END 4 */
 
 /**
