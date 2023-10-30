@@ -127,8 +127,7 @@ int main(void)
   while (1)
   {
 	 if (delayRead(&delay) == 1) {
-		HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_13);  //CAMBIO EL ESTADO DEL LED EN EL PIN 13
-		delayInit(&delay, duracion);
+		HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_13);  //cambio el estado del LED en el PIN 13
 	} else {
 
 	}

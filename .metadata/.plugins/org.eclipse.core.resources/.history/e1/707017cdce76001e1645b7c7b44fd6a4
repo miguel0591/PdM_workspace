@@ -9,9 +9,9 @@
   * Copyright (c) 2023 STMicroelectronics.
   * All rights reserved.
   *
-  * Este Codigo hace parpadear el LED integrado en la placa Back Pill
-  * El LED se encuentra en el pin PC13 el ANODO se encuentra conectado a 3.3v
-  * por lo que es necesario escribir un 0 en el puerto para encenderlo.
+  * This software is licensed under terms that can be found in the LICENSE file
+  * in the root directory of this software component.
+  * If no LICENSE file comes with this software, it is provided AS-IS.
   *
   ******************************************************************************
   */
@@ -119,19 +119,14 @@ int main(void)
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   /* USER CODE BEGIN 2 */
-  delayInit(&delay, duracion);                      //INICIALIZO POR PRIMERA VEZ EL DELAY
+  delayInit(&delay, duracion);
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	 if (delayRead(&delay) == 1) {
-		HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_13);  //CAMBIO EL ESTADO DEL LED EN EL PIN 13
-		delayInit(&delay, duracion);
-	} else {
 
-	}
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */

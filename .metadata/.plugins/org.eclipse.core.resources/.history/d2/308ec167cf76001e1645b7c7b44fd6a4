@@ -119,19 +119,14 @@ int main(void)
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   /* USER CODE BEGIN 2 */
-  delayInit(&delay, duracion);                      //INICIALIZO POR PRIMERA VEZ EL DELAY
+  delayInit(&delay, duracion);
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	 if (delayRead(&delay) == 1) {
-		HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_13);  //CAMBIO EL ESTADO DEL LED EN EL PIN 13
-		delayInit(&delay, duracion);
-	} else {
 
-	}
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
