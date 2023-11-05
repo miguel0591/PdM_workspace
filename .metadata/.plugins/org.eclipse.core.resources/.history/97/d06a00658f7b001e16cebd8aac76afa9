@@ -96,8 +96,15 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	  HAL_GPIO_TogglePin(GPIOG, Leds[Pos]);
-	  HAL_Delay(Flicker);
+	  if (Pos < (sizeof(Leds)/2)) {
+		  HAL_GPIO_WritePin(GPIOG, Leds[Pos], GPIO_PIN_SET);
+		  HAL_Delay(Flicker);
+		  HAL_GPIO_WritePin(GPIOG, Leds[Pos], GPIO_PIN_RESET);
+		  Pos++;
+	} else {
+		  Pos = 0;
+	}
+
 
     /* USER CODE END WHILE */
 
@@ -426,16 +433,10 @@ static void MX_GPIO_Init(void)
 /* USER CODE BEGIN 4 */
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
-	//apagamos todos los led antes de cambiar la posicion
-	for (int var = 0; var < (sizeof(Leds)/2); ++var) {
-		HAL_GPIO_WritePin(GPIOG, Leds[var], GPIO_PIN_RESET);
-	}
+	if (pos<(sizeof(Leds)/2)) {
 
-	//cambiamos la poscicion (la aumentamos o volvemos a la primera
-	if (Pos<((sizeof(Leds)/2)-1)) {
-		++Pos;
 	} else {
-		Pos = 0;
+
 	}
 }
 /* USER CODE END 4 */
