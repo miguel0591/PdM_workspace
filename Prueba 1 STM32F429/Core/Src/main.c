@@ -98,10 +98,6 @@ int main(void)
   {
 	  HAL_GPIO_TogglePin(GPIOG, Leds[Pos]);
 	  HAL_Delay(Flicker);
-
-    /* USER CODE END WHILE */
-
-    /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
 }

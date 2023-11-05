@@ -5,8 +5,8 @@
 + LEDs, Botones y Sensores para el uso del usuario
 + Descripcion de los Ejercicios
     * PRACTICA 1: Uso de Retardos Bloqueantes
-    * PRACTICA 2:
-	* PRACTICA 3:
+    * PRACTICA 2: Uso de Retardos NO Bloqueantes
+	* PRACTICA 3: Modularizacion.
 
 ## Placa de Desarrollo Utilizada:
 STM32F429I-DISC1 Discovery Development Kit
@@ -77,3 +77,58 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 		Pos = 0;
 	}
 }
+```
+## Practica 2 - Ejercicio 1 , 2 y 3: 
+Consitia en generar funciones para trabajar con delays no bloqueantes, en la parte de aplicarlas para hacer parpadear un led y en la ultima parte poder usar un array para tener valorios delays disponibles.
+
+En el archivo main.c se definio lo necesario para implemetar todo pasando por Includes, Typedef, Macros y Variables Privadas.
+```
+//Includes Privados
+#include <stdint.h>
+#include <stdbool.h>
+
+//Typedef Privados
+typedef uint32_t tick_t;
+typedef bool bool_t;
+typedef struct {
+   tick_t startTime;
+   tick_t duration;
+   bool_t running;
+} delay_t;
+
+Macros Privados
+#define ciclosdeseados 10              //5 de encendido y 5 de apagado.
+
+//Variables Privadas
+delay_t retardo;                                    //estructura del delay
+tick_t duracion[] = {1000, 200, 100};    // diferentes duraciones en un array
+uint8_t posd = 0;                               // indice del vector de arriba
+uint8_t ciclo = 0;                              // candidad de encendidos + apagado realizados
+```
+
+Los prototipos de funciones se escribieron:
+```
+//Inicializa el contador con los parametros pasados
+void delayInit( delay_t* delay, tick_t duration ){
+	delay->duration = duration;
+	delay->running = false;
+	delay->startTime = HAL_GetTick();
+};
+
+//Revisa el valor del flag para saber si se cumplio el retardo
+bool_t delayRead( delay_t* delay ){
+	if ((HAL_GetTick() - delay->startTime) <= delay->duration) {
+		delay->running = false;
+	}else{
+		delay->running = true;
+	}
+	return delay->running;
+}
+
+//nodifica la duracion del retardo.
+void delayWrite( delay_t * delay, tick_t duration ){
+	delay->duration = duration;
+	delay->running = false;
+	delay->startTime = HAL_GetTick();
+};
+```
