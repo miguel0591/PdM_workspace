@@ -1,0 +1,5 @@
+2023-10-30 00:18:14,609 [ERROR] AdobePublisher:162 - Exception while opening the connection: java.net.SocketTimeoutException: Connect timed out
+2023-10-30 00:18:16,612 [ERROR] AdobePublisher:162 - Exception while opening the connection: java.net.SocketTimeoutException: Connect timed out
+2023-10-30 00:18:18,614 [ERROR] AdobePublisher:162 - Exception while opening the connection: java.net.SocketTimeoutException: Connect timed out
+2023-10-30 00:18:20,616 [ERROR] AdobePublisher:162 - Exception while opening the connection: java.net.SocketTimeoutException: Connect timed out
+2023-10-30 01:18:22,005 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 

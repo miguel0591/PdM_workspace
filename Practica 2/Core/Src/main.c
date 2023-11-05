@@ -50,8 +50,10 @@ typedef struct {
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-delay_t delay;
-tick_t duracion = 100;
+delay_t delay;                        // ESTRUCTURA PARA EL DELAY
+tick_t duracion[] = {1000, 200, 100}; // DIFERENTES DURACIONES EN UN ARRAY
+uint8_t count = 0;                    // VARIABLE PARA CONTAR LOS CAMBIOS
+uint8_t pos = 0;                      // VARIABLE PARA LA POSICION DEL ARRAY
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -119,19 +121,33 @@ int main(void)
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   /* USER CODE BEGIN 2 */
-  delayInit(&delay, duracion);                      //INICIALIZO POR PRIMERA VEZ EL DELAY
+  delayInit(&delay, duracion[0]);                      //INICIALIZO POR PRIMERA VEZ EL DELAY
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	 if (delayRead(&delay) == 1) {
-		HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_13);  //CAMBIO EL ESTADO DEL LED EN EL PIN 13
-		delayInit(&delay, duracion);
-	} else {
 
+	  if (count<5) {
+			 if (delayRead(&delay) == 1) {
+				HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_13);  //CAMBIO EL ESTADO DEL LED EN EL PIN 13
+				delayInit(&delay, duracion[pos]);
+			}
+			 count++;
+	} else {
+		if (pos<2) {
+			pos++;
+			count = 0;
+			delayWrite(&delay, duracion[pos]);
+			HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_13);  //CAMBIO EL ESTADO DEL LED EN EL PIN 13
+		} else {
+			pos = 0;
+			delayWrite(&delay, duracion[pos]);
+			HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_13);
+		}
 	}
+
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
