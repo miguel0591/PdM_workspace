@@ -132,3 +132,6 @@ void delayWrite( delay_t * delay, tick_t duration ){
 	delay->startTime = HAL_GetTick();
 };
 ```
+## Practica 3 - Ejercicio 1 y 2
+Modulariacion del ejercicio anterior fomando la carpeta API donde se crean la sub-carpetas Src y Inc con lo archivos API_delay.h y API_delay.c respectivamente.
+![](/img/001.png)
