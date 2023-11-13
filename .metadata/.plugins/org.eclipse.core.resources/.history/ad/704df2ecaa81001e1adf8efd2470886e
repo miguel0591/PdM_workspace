@@ -1,0 +1,65 @@
+//include Necesarios
+#include "API_delay.h"
+#include "stm32f4xx_hal.h"
+#include "API_debounce.h"
+
+
+//Prototipo de funciones
+void debounceFSM_init(){
+	MEF = BUTTON_UP;
+};  // Inicializar la maquina de etado
+
+
+void debounceFSM_update(){
+	switch(MEF){
+
+	case BUTTON_UP:
+		if (HAL_GPIO_ReadPin(GPIOA, B1_Pin) == 1) {
+			MEF = BUTTON_FALLING;
+			delayInit(&retardo, duracion);
+		}else{
+			MEF = BUTTON_UP;
+		}
+	break;
+
+	case BUTTON_FALLING:
+		if(delayRead(&retardo) == 1){
+			if(HAL_GPIO_ReadPin(GPIOA, B1_Pin) == 1){
+				MEF = BUTTON_DOWN;
+			}
+			else{
+				MEF = BUTTON_UP;
+			}
+		}
+	break;
+
+	case BUTTON_DOWN:
+		if(HAL_GPIO_ReadPin(GPIOA, B1_Pin) == 0){
+			MEF = BUTTON_RAISING;
+			delayInit(&retardo, duracion);
+		}else{
+			MEF = BUTTON_DOWN;
+		}
+	break;
+
+	case BUTTON_RAISING:
+		if(delayRead(&retardo) == 1){
+			if(HAL_GPIO_ReadPin(GPIOA, B1_Pin) == 0){
+				MEF = BUTTON_UP;
+			}else{
+				MEF = BUTTON_DOWN;
+			}
+		}
+	break;
+	};
+}; //Actuliza la maquina de estado
+
+
+void buttonPressed(){
+	HAL_GPIO_WritePin(GPIOG, LD4_Pin, GPIO_PIN_SET);
+};    //Da la salida de boton precionado (enciende el led)
+
+
+void buttonReleased(){
+	HAL_GPIO_WritePin(GPIOG, LD4_Pin, GPIO_PIN_RESET);
+};   //Da la salida de boton NO precionado (Apaga el led)

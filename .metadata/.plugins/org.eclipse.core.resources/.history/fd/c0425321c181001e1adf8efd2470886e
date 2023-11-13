@@ -1,0 +1,26 @@
+//Includes Necesarios
+#include <stdint.h>
+#include <stdbool.h>
+#include "stm32f4xx_hal.h"
+
+
+typedef enum{
+	BUTTON_UP,
+	BUTTON_FALLING,
+	BUTTON_DOWN,
+	BUTTON_RAISING,
+} debounceState_t;
+
+// Variable Necesarias:
+
+
+
+//Declaraciones de Funciones Publicas
+void debounceFSM_init(debounceState_t* FSM);      // Inicializar la maquina de etado
+void debounceFSM_update(debounceState_t* FSM);    // Actuliza el estado de la maquin de estado
+void buttonPressed();                             //Da la salida de boton precionado (enciende el led)
+void buttonReleased();                            //Da la salida de boton NO precionado (Apaga el led)
+
+
+
+
