@@ -7,6 +7,7 @@
     * PRACTICA 1: Uso de Retardos Bloqueantes
     * PRACTICA 2: Uso de Retardos NO Bloqueantes
 	* PRACTICA 3: Modularizacion.
+	* PRACTICA 4: MEF y Antirebote por soft.
 
 ## Placa de Desarrollo Utilizada:
 STM32F429I-DISC1 Discovery Development Kit
@@ -136,3 +137,8 @@ void delayWrite( delay_t * delay, tick_t duration ){
 Modulariacion del ejercicio anterior fomando la carpeta API donde se crean la sub-carpetas Src y Inc con lo archivos API_delay.h y API_delay.c respectivamente.
 
 ![](/img/001.png)
+
+
+## Practica 4 - Ejercicio 1 y 2
+Dentro de carpeta Practica 4 STM32F429 se encuentran en dos carpetas separadas el ejercicio 1 y 2 de la guia.
+![](/img/002.png)
