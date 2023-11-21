@@ -8,6 +8,7 @@
     * PRACTICA 2: Uso de Retardos NO Bloqueantes
 	* PRACTICA 3: Modularizacion.
 	* PRACTICA 4: MEF y Antirebote por soft.
+	* PRACTICA 5: Manejo de la UART.
 
 ## Placa de Desarrollo Utilizada:
 STM32F429I-DISC1 Discovery Development Kit
@@ -142,3 +143,9 @@ Modulariacion del ejercicio anterior fomando la carpeta API donde se crean la su
 ## Practica 4 - Ejercicio 1 y 2
 Dentro de carpeta Practica 4 STM32F429 se encuentran en dos carpetas separadas el ejercicio 1 y 2 de la guia.
 ![](/img/002.png)
+
+## Practica 5 - Ejercicio 1 y 2
+El ejercicio consistia en la utilizacion del periferico UART para mostrar mensajes en una terminal serie, el punto 1 y 2 estan implementados sobre el mismo ejercio. La placa utilizada tiene conectado el STLINK la USART1 implementada en los puerto PA9 y PA10.
+
+El ejercicio imprime en la terminal cada vez que el led fue precionado y cambia la velocidad del parpadeo
+![](/img/003.png)
