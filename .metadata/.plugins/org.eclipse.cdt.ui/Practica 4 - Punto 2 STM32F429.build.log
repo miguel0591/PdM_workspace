@@ -1,17 +1,10 @@
-23:12:24 **** Incremental Build of configuration Debug for project Practica 4 - Punto 2 STM32F429 ****
+21:20:13 **** Build of configuration Debug for project Practica 4 - Punto 2 STM32F429 ****
 make -j8 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"/home/ubuntu22/CESE/001ProgDeMicro/PdM_workspace/Practica 4 STM32F429/Practica 4 - Punto 2 STM32F429/Drivers/API" -I"/home/ubuntu22/CESE/001ProgDeMicro/PdM_workspace/Practica 4 STM32F429/Practica 4 - Punto 2 STM32F429/Drivers/API/Src" -I"/home/ubuntu22/CESE/001ProgDeMicro/PdM_workspace/Practica 4 STM32F429/Practica 4 - Punto 2 STM32F429/Drivers/API/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-arm-none-eabi-gcc -o "Practica 4 - Punto 2 STM32F429.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/ubuntu22/CESE/001ProgDeMicro/PdM_workspace/Practica 4 STM32F429/Practica 4 - Punto 2 STM32F429/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Practica 4 - Punto 2 STM32F429.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: Practica 4 - Punto 2 STM32F429.elf
- 
 arm-none-eabi-size   Practica\ 4\ -\ Punto\ 2\ STM32F429.elf 
-arm-none-eabi-objdump -h -S  Practica\ 4\ -\ Punto\ 2\ STM32F429.elf  > "Practica 4 - Punto 2 STM32F429.list"
    text	   data	    bss	    dec	    hex	filename
    7748	     28	   1604	   9380	   24a4	Practica 4 - Punto 2 STM32F429.elf
 Finished building: default.size.stdout
  
-Finished building: Practica 4 - Punto 2 STM32F429.list
- 
 
-23:12:24 Build Finished. 0 errors, 0 warnings. (took 336ms)
+21:20:13 Build Finished. 0 errors, 0 warnings. (took 167ms)
 
