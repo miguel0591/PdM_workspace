@@ -5344,3 +5344,21 @@ java.lang.Exception: Project 'Proyecto Final - PdM v2' is not open.
 
 !ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2023-12-06 21:25:00.328
 !MESSAGE Existing sessions are:
+!SESSION 2023-12-07 12:33:35.586 -----------------------------------------------
+eclipse.buildId=Version 1.13.2
+java.version=17.0.6
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=es_AR
+Command-line arguments:  -os linux -ws gtk -arch x86_64
+
+!ENTRY org.eclipse.core.resources 2 10035 2023-12-07 12:33:39.732
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2023-12-07 12:33:41.966
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2023-12-07 12:33:41.967
+!MESSAGE Log4j2 initialized with config file /home/ubuntu22/CESE/001ProgDeMicro/PdM_workspace/.metadata/.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2023-12-07 12:33:47.715
+!MESSAGE Started RMI Server, listening on port 41337
