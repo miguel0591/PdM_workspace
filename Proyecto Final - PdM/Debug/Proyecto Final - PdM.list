@@ -41,13 +41,13 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  18 .debug_macro  00025d96  00000000  00000000  0002d746  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .debug_line   0000f0ee  00000000  00000000  000534dc  2**0
+ 19 .debug_line   0000f0ef  00000000  00000000  000534dc  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 20 .debug_str    000df3da  00000000  00000000  000625ca  2**0
+ 20 .debug_str    000df3da  00000000  00000000  000625cb  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 21 .debug_frame  00002b4c  00000000  00000000  001419a4  2**2
+ 21 .debug_frame  00002b4c  00000000  00000000  001419a8  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 22 .debug_line_str 00000074  00000000  00000000  001444f0  2**0
+ 22 .debug_line_str 00000074  00000000  00000000  001444f4  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -2549,7 +2549,9 @@ static LCD_Status_t LCD_2x16_delay(uint8_t delay){
 08001138 <LCD_2x16_init>:
 
 
-
+/*******************************************************************************************
+ *                                    Funciones Publicas                                   *
+ *******************************************************************************************/
 LCD_Status_t LCD_2x16_init(void){
  8001138:	b580      	push	{r7, lr}
  800113a:	af00      	add	r7, sp, #0
@@ -2960,7 +2962,7 @@ static void LDC_printTemp(uint16_t temp){
 080013e0 <MEF_fanOff>:
 
 /* Manejo de actuadores*/
-/*Manejo de FAN*/
+/*Manejo de FAN - el rele del fan encuentra conectado al GPIO_PIN 13*/
 static void MEF_fanOff(){
  80013e0:	b580      	push	{r7, lr}
  80013e2:	af00      	add	r7, sp, #0
@@ -2991,10 +2993,11 @@ static void MEF_fanOn(){
 08001410 <MEF_alarmOff>:
 
 /*Manejo de Alarma*/
+/*El contacto que dispara la alamar se en cuentra conectado al GPIO_PIN 14*/
 static void MEF_alarmOff(){
  8001410:	b580      	push	{r7, lr}
  8001412:	af00      	add	r7, sp, #0
-	HAL_GPIO_WritePin(LD4_GPIO_Port, LD4_Pin, 0);
+	HAL_GPIO_WritePin(GPIOG, GPIO_PIN_14, 0);
  8001414:	2200      	movs	r2, #0
  8001416:	f44f 4180 	mov.w	r1, #16384	; 0x4000
  800141a:	4802      	ldr	r0, [pc, #8]	; (8001424 <MEF_alarmOff+0x14>)
@@ -3008,7 +3011,7 @@ static void MEF_alarmOff(){
 static void MEF_alarmOn(){
  8001428:	b580      	push	{r7, lr}
  800142a:	af00      	add	r7, sp, #0
-	HAL_GPIO_WritePin(LD4_GPIO_Port, LD4_Pin, 1);
+	HAL_GPIO_WritePin(GPIOG, GPIO_PIN_14, 1);
  800142c:	2201      	movs	r2, #1
  800142e:	f44f 4180 	mov.w	r1, #16384	; 0x4000
  8001432:	4802      	ldr	r0, [pc, #8]	; (800143c <MEF_alarmOn+0x14>)

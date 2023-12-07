@@ -57,7 +57,7 @@ static void LDC_printTemp(uint16_t temp){
 }
 
 /* Manejo de actuadores*/
-/*Manejo de FAN - el rele del fan encuentra conectado al GPIO_PIN 13*/
+/*Manejo de FAN*/
 static void MEF_fanOff(){
 	HAL_GPIO_WritePin(GPIOG, GPIO_PIN_13, 0);
 };
@@ -66,12 +66,11 @@ static void MEF_fanOn(){
 };
 
 /*Manejo de Alarma*/
-/*El contacto que dispara la alamar se en cuentra conectado al GPIO_PIN 14*/
 static void MEF_alarmOff(){
-	HAL_GPIO_WritePin(GPIOG, GPIO_PIN_14, 0);
+	HAL_GPIO_WritePin(LD4_GPIO_Port, LD4_Pin, 0);
 };
 static void MEF_alarmOn(){
-	HAL_GPIO_WritePin(GPIOG, GPIO_PIN_14, 1);
+	HAL_GPIO_WritePin(LD4_GPIO_Port, LD4_Pin, 1);
 };
 
 /*******************************************************************************************

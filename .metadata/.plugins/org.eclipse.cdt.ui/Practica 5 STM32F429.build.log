@@ -1,4 +1,4 @@
-11:18:39 **** Incremental Build of configuration Debug for project Practica 5 STM32F429 ****
+12:23:29 **** Incremental Build of configuration Debug for project Practica 5 STM32F429 ****
 make -j8 all 
 arm-none-eabi-size   Practica\ 5\ STM32F429.elf 
    text	   data	    bss	    dec	    hex	filename
@@ -6,5 +6,5 @@ arm-none-eabi-size   Practica\ 5\ STM32F429.elf
 Finished building: default.size.stdout
  
 
-11:18:40 Build Finished. 0 errors, 0 warnings. (took 191ms)
+12:23:29 Build Finished. 0 errors, 0 warnings. (took 193ms)
 

@@ -61,3 +61,48 @@ Finished building: default.size.stdout
  
 Finished building: Proyecto Final - PdM.list
  
+12:13:45 **** Incremental Build of configuration Debug for project Practica 5 STM32F429 ****
+make -j8 all 
+arm-none-eabi-size   Practica\ 5\ STM32F429.elf 
+   text	   data	    bss	    dec	    hex	filename
+  10228	     48	   1672	  11948	   2eac	Practica 5 STM32F429.elf
+Finished building: default.size.stdout
+ 
+12:13:46 **** Incremental Build of configuration Debug for project Proyecto Final - PdM ****
+make -j8 all 
+arm-none-eabi-gcc "../Drivers/API/Src/LCD_2X16_HD44780.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"/home/ubuntu22/CESE/001ProgDeMicro/PdM_workspace/Proyecto Final - PdM/Drivers/API/Inc" -I"/home/ubuntu22/CESE/001ProgDeMicro/PdM_workspace/Proyecto Final - PdM/Drivers/API/Src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/API/Src/LCD_2X16_HD44780.d" -MT"Drivers/API/Src/LCD_2X16_HD44780.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/API/Src/LCD_2X16_HD44780.o"
+arm-none-eabi-gcc "../Drivers/API/Src/MEF.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"/home/ubuntu22/CESE/001ProgDeMicro/PdM_workspace/Proyecto Final - PdM/Drivers/API/Inc" -I"/home/ubuntu22/CESE/001ProgDeMicro/PdM_workspace/Proyecto Final - PdM/Drivers/API/Src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/API/Src/MEF.d" -MT"Drivers/API/Src/MEF.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/API/Src/MEF.o"
+arm-none-eabi-gcc "../Core/Src/i2c.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"/home/ubuntu22/CESE/001ProgDeMicro/PdM_workspace/Proyecto Final - PdM/Drivers/API/Inc" -I"/home/ubuntu22/CESE/001ProgDeMicro/PdM_workspace/Proyecto Final - PdM/Drivers/API/Src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/i2c.d" -MT"Core/Src/i2c.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/i2c.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"/home/ubuntu22/CESE/001ProgDeMicro/PdM_workspace/Proyecto Final - PdM/Drivers/API/Inc" -I"/home/ubuntu22/CESE/001ProgDeMicro/PdM_workspace/Proyecto Final - PdM/Drivers/API/Src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Proyecto Final - PdM.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/ubuntu22/CESE/001ProgDeMicro/PdM_workspace/Proyecto Final - PdM/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Proyecto Final - PdM.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Proyecto Final - PdM.elf
+ 
+arm-none-eabi-size   Proyecto\ Final\ -\ PdM.elf 
+arm-none-eabi-objdump -h -S  Proyecto\ Final\ -\ PdM.elf  > "Proyecto Final - PdM.list"
+   text	   data	    bss	    dec	    hex	filename
+  17652	    104	   2080	  19836	   4d7c	Proyecto Final - PdM.elf
+Finished building: default.size.stdout
+ 
+Finished building: Proyecto Final - PdM.list
+ 
+12:23:29 **** Incremental Build of configuration Debug for project Practica 5 STM32F429 ****
+make -j8 all 
+arm-none-eabi-size   Practica\ 5\ STM32F429.elf 
+   text	   data	    bss	    dec	    hex	filename
+  10228	     48	   1672	  11948	   2eac	Practica 5 STM32F429.elf
+Finished building: default.size.stdout
+ 
+12:23:29 **** Incremental Build of configuration Debug for project Proyecto Final - PdM ****
+make -j8 all 
+arm-none-eabi-size   Proyecto\ Final\ -\ PdM.elf 
+   text	   data	    bss	    dec	    hex	filename
+  17652	    104	   2080	  19836	   4d7c	Proyecto Final - PdM.elf
+Finished building: default.size.stdout
+ 
+12:23:33 **** Incremental Build of configuration Debug for project Proyecto Final - PdM ****
+make -j8 all 
+arm-none-eabi-size   Proyecto\ Final\ -\ PdM.elf 
+   text	   data	    bss	    dec	    hex	filename
+  17652	    104	   2080	  19836	   4d7c	Proyecto Final - PdM.elf
+Finished building: default.size.stdout
+ 
