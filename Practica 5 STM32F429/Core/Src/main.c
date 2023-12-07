@@ -120,6 +120,7 @@ int main(void)
 			  delayWrite(&delay1, blink[0]);
 			  pos = 0;
 		  }
+		  uartSendString(&Data);
 	  }
     /* USER CODE END WHILE */
 

@@ -1,0 +1,24 @@
+/*
+ * SENSOR_Temp.c
+ *
+ *  Created on: Dec 6, 2023
+ *      Author: ubuntu22
+ */
+#include "SENSOR_Temp.h"
+
+
+const uint32_t Tmax = 100;   /*Corresponde a los 4096 de DAC*/
+const uint32_t Tmin =  20;    /*Corresponde a los    0 de DAC*/
+const uint32_t diff = Tmax-Tmin;
+
+
+void SENSOR_TEMP_init(void){
+	HAL_ADC_Start(&hadc1);
+};
+
+uint8_t SENSOR_TEMP_check(void){
+	HAL_ADC_PollForConversion(&hadc1, 100);
+	uint32_t tempADC = HAL_ADC_GetValue(&hadc1);
+	float temp = (((diff)/4095)*tempADC)-Tmin;
+	return temp;
+};

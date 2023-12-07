@@ -1,0 +1,28 @@
+/*
+ * SENSOR_Temp.h
+ *
+ *  Created on: Dec 6, 2023
+ *      Author: ubuntu22
+ */
+
+#ifndef API_INC_SENSOR_TEMP_H_
+#define API_INC_SENSOR_TEMP_H_
+
+#include "stm32f4xx_hal.h"
+#include <stdio.h>
+#include "adc.h"
+
+#define Tmax  100    /*Corresponde a los 4096 de DAC*/
+#define Tmin   -5    /*Corresponde a los    0 de DAC*/
+
+#define DAC1_PORT GPIOA
+#define DAC1_PIN  GPIO_PIN_5
+
+void SENSOR_init();
+
+uint16_t SENSOR_checkTemp(){
+
+}
+
+
+#endif /* API_INC_SENSOR_TEMP_H_ */

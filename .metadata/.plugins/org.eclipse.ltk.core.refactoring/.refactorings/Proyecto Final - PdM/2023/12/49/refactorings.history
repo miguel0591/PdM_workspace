@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Proyecto Final - PdM/Drivers/API/Src/LDC_2X16_HD44780.c&apos; to &apos;LCD_2X16_HD44780.c&apos;" description="Rename resource &apos;LDC_2X16_HD44780.c&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Drivers/API/Src/LDC_2X16_HD44780.c" name="LCD_2X16_HD44780.c" stamp="1701828804385" updateReferences="true"/>
+</session>

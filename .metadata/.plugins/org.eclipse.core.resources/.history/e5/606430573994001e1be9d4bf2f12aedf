@@ -1,0 +1,16 @@
+#include "stm32f4xx.h"
+#include "LCD_2X16_HD44780.h"
+
+
+typedef enum{
+	ESTABLE,
+	PRECAUCION,
+	PELIGRO
+} MEF_status;
+
+typedef bool bool_t;
+
+
+void MEF_init(void);
+void MEF_update(void);
+

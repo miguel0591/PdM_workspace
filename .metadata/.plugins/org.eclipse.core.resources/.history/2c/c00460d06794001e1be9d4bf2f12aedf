@@ -1,0 +1,10 @@
+/*
+ * SENSOR_Temp.c
+ *
+ *  Created on: Dec 6, 2023
+ *      Author: ubuntu22
+ */
+
+void SENSOR_init(){
+	HAL_ADC_Start_DMA(hadc1, pData, Length)
+}

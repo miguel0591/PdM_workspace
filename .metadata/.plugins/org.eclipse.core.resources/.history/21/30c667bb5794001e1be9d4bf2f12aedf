@@ -1,0 +1,13 @@
+/*
+ * SENSOR_Temp.h
+ *
+ *  Created on: Dec 6, 2023
+ *      Author: ubuntu22
+ */
+
+#ifndef API_INC_SENSOR_TEMP_H_
+#define API_INC_SENSOR_TEMP_H_
+
+
+
+#endif /* API_INC_SENSOR_TEMP_H_ */

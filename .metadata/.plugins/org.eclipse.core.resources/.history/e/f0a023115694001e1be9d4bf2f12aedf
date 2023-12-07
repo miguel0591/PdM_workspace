@@ -1,0 +1,19 @@
+#include "stm32f4xx.h"
+#include "LCD_2X16_HD44780.h"
+#include "SENSOR_Temp.h"
+
+#define T1 40
+#define T2 100
+
+typedef enum{
+	ESTABLE,
+	PRECAUCION,
+	PELIGRO
+} MEF_status;
+
+typedef bool bool_t;
+
+
+void MEF_init(void);
+void MEF_update(void);
+

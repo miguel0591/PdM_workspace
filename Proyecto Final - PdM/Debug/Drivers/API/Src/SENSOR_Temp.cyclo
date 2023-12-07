@@ -1,0 +1,2 @@
+../Drivers/API/Src/SENSOR_Temp.c:22:6:SENSOR_TEMP_init	1
+../Drivers/API/Src/SENSOR_Temp.c:26:10:SENSOR_TEMP_check	1

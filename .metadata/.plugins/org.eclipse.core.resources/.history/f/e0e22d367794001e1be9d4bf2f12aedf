@@ -1,0 +1,27 @@
+/*
+ * SENSOR_Temp.c
+ *
+ *  Created on: Dec 6, 2023
+ *      Author: ubuntu22
+ */
+#include "SENSOR_Temp.h"
+#include "math.h"
+
+uint32_t data_DAC;
+uint32_t DAC_temp;
+
+void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc1)
+{
+	DAC_temp = data_DAC;
+}
+
+void SENSOR_TEMP_init(){
+	HAL_ADC_Start_DMA(&hadc1, &data_DAC, 1);
+}
+
+uint16_t SENSOR_TEMP_check(){
+	uint8_t rango = Tmax-Tmin;
+	float delta = rango/4095;
+	uint16_t temp1 = (delta * data_DAC)-Tmin;
+	return temp1;
+}
