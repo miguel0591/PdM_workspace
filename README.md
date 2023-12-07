@@ -9,6 +9,7 @@
 	* PRACTICA 3: Modularizacion.
 	* PRACTICA 4: MEF y Antirebote por soft.
 	* PRACTICA 5: Manejo de la UART.
+	* PROYECTO FINAL PDM.
 
 ## Placa de Desarrollo Utilizada:
 STM32F429I-DISC1 Discovery Development Kit
@@ -149,3 +150,12 @@ El ejercicio consistia en la utilizacion del periferico UART para mostrar mensaj
 
 El ejercicio imprime en la terminal cada vez que el led fue precionado y cambia la velocidad del parpadeo
 ![](/img/003.png)
+
+## PROYECTO FINAL - PDM
+Consiste en un sistema de control de temperatura, la misma debe mostrarse sobre una pantalla LCD, según su valor el sistema puede encontrarse en tres estados (Estable, Precaución y Peligro).
+
+El sistema debe actuar en consecuencia al estado en que se encuentra:
+Estable: Debe presentar la temp en el display, FAN OFF y ALARM OFF
+Precaución: Debe presentar la temp en el display, FAN ON y ALARM OFF
+Peligro: Debe presentar la temp en el display, FAN ON y ALARM ON
+
