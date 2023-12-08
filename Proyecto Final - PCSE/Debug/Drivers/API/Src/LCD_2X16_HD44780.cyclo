@@ -1,0 +1,9 @@
+../Drivers/API/Src/LCD_2X16_HD44780.c:9:21:LCD_2x16_command	1
+../Drivers/API/Src/LCD_2X16_HD44780.c:21:21:LCD_2x16_char	1
+../Drivers/API/Src/LCD_2X16_HD44780.c:33:21:LCD_2x16_delay	1
+../Drivers/API/Src/LCD_2X16_HD44780.c:42:14:LCD_2x16_init	1
+../Drivers/API/Src/LCD_2X16_HD44780.c:66:14:LCD_2x16_cursor	7
+../Drivers/API/Src/LCD_2X16_HD44780.c:98:14:LCD_2x16_string	2
+../Drivers/API/Src/LCD_2X16_HD44780.c:104:14:LDC_2x16_clear	1
+../Drivers/API/Src/LCD_2X16_HD44780.c:111:14:LCD_2x16_cursorBlink	1
+../Drivers/API/Src/LCD_2X16_HD44780.c:115:14:LCD_2x16_uint16	1

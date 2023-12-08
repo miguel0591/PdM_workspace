@@ -17,9 +17,9 @@
   */
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
+#include <port_i2c.h>
 #include "main.h"
 #include "adc.h"
-#include "i2c.h"
 #include "gpio.h"
 
 /* Private includes ----------------------------------------------------------*/

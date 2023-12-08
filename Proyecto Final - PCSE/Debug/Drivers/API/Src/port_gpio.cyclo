@@ -1,0 +1,5 @@
+../Drivers/API/Src/port_gpio.c:109:6:MX_GPIO_Init	1
+../Drivers/API/Src/port_gpio.c:341:6:MEF_fanOff	1
+../Drivers/API/Src/port_gpio.c:344:6:MEF_fanOn	1
+../Drivers/API/Src/port_gpio.c:350:6:MEF_alarmOff	1
+../Drivers/API/Src/port_gpio.c:353:6:MEF_alarmOn	1

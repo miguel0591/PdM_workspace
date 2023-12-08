@@ -1,6 +1,0 @@
-#include "MEF.h"
-
-
-MEF_status MEF_init(){
-	return Estable
-}

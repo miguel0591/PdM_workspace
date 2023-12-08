@@ -1,0 +1,10 @@
+../Drivers/API/Src/MEF.c:28:13:LCD_printEstable	1
+../Drivers/API/Src/MEF.c:36:13:LCD_printPrecaucion	1
+../Drivers/API/Src/MEF.c:45:13:LCD_printPeligro	1
+../Drivers/API/Src/MEF.c:54:13:LDC_printTemp	2
+../Drivers/API/Src/MEF.c:64:13:UART_printEstable	1
+../Drivers/API/Src/MEF.c:75:13:UART_printPrecaucion	1
+../Drivers/API/Src/MEF.c:86:13:UART_printPeligro	1
+../Drivers/API/Src/MEF.c:101:6:MEF_init	1
+../Drivers/API/Src/MEF.c:108:6:MEF_update	20
+../Drivers/API/Src/MEF.c:195:6:MEF_uartUpdate	6
