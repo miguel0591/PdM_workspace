@@ -1976,3 +1976,52 @@ Finished building: default.size.stdout
  
 Finished building: Proyecto Final - PCSE.list
  
+22:22:16 **** Incremental Build of configuration Debug for project Practica 5 STM32F429 ****
+make -j8 all 
+arm-none-eabi-size   Practica\ 5\ STM32F429.elf 
+   text	   data	    bss	    dec	    hex	filename
+  10228	     48	   1672	  11948	   2eac	Practica 5 STM32F429.elf
+Finished building: default.size.stdout
+ 
+22:22:17 **** Incremental Build of configuration Debug for project Proyecto Final - PCSE ****
+make -j8 all 
+arm-none-eabi-gcc "../Drivers/API/Src/MEF.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"/home/ubuntu22/CESE/001ProgDeMicro/PdM_workspace/Proyecto Final - PCSE/Drivers/API/Inc" -I"/home/ubuntu22/CESE/001ProgDeMicro/PdM_workspace/Proyecto Final - PCSE/Drivers/API/Src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/API/Src/MEF.d" -MT"Drivers/API/Src/MEF.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/API/Src/MEF.o"
+arm-none-eabi-gcc "../Drivers/API/Src/SENSOR_Temp.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"/home/ubuntu22/CESE/001ProgDeMicro/PdM_workspace/Proyecto Final - PCSE/Drivers/API/Inc" -I"/home/ubuntu22/CESE/001ProgDeMicro/PdM_workspace/Proyecto Final - PCSE/Drivers/API/Src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/API/Src/SENSOR_Temp.d" -MT"Drivers/API/Src/SENSOR_Temp.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/API/Src/SENSOR_Temp.o"
+arm-none-eabi-gcc "../Drivers/API/Src/port_adc.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"/home/ubuntu22/CESE/001ProgDeMicro/PdM_workspace/Proyecto Final - PCSE/Drivers/API/Inc" -I"/home/ubuntu22/CESE/001ProgDeMicro/PdM_workspace/Proyecto Final - PCSE/Drivers/API/Src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/API/Src/port_adc.d" -MT"Drivers/API/Src/port_adc.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/API/Src/port_adc.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"/home/ubuntu22/CESE/001ProgDeMicro/PdM_workspace/Proyecto Final - PCSE/Drivers/API/Inc" -I"/home/ubuntu22/CESE/001ProgDeMicro/PdM_workspace/Proyecto Final - PCSE/Drivers/API/Src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Drivers/API/Src/SENSOR_Temp.c: In function 'SENSOR_TEMP_check':
+../Drivers/API/Src/SENSOR_Temp.c:29:34: error: 'tempADC' undeclared (first use in this function)
+   29 |         float te = (con * (float)tempADC);
+      |                                  ^~~~~~~
+../Drivers/API/Src/SENSOR_Temp.c:29:34: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Drivers/API/Src/subdir.mk:40: Drivers/API/Src/SENSOR_Temp.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+22:22:55 **** Incremental Build of configuration Debug for project Practica 5 STM32F429 ****
+make -j8 all 
+arm-none-eabi-size   Practica\ 5\ STM32F429.elf 
+   text	   data	    bss	    dec	    hex	filename
+  10228	     48	   1672	  11948	   2eac	Practica 5 STM32F429.elf
+Finished building: default.size.stdout
+ 
+22:22:55 **** Incremental Build of configuration Debug for project Proyecto Final - PCSE ****
+make -j8 all 
+arm-none-eabi-gcc "../Drivers/API/Src/SENSOR_Temp.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"/home/ubuntu22/CESE/001ProgDeMicro/PdM_workspace/Proyecto Final - PCSE/Drivers/API/Inc" -I"/home/ubuntu22/CESE/001ProgDeMicro/PdM_workspace/Proyecto Final - PCSE/Drivers/API/Src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/API/Src/SENSOR_Temp.d" -MT"Drivers/API/Src/SENSOR_Temp.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/API/Src/SENSOR_Temp.o"
+arm-none-eabi-gcc -o "Proyecto Final - PCSE.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/ubuntu22/CESE/001ProgDeMicro/PdM_workspace/Proyecto Final - PCSE/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Proyecto Final - PCSE.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Proyecto Final - PCSE.elf
+ 
+arm-none-eabi-size   Proyecto\ Final\ -\ PCSE.elf 
+arm-none-eabi-objdump -h -S  Proyecto\ Final\ -\ PCSE.elf  > "Proyecto Final - PCSE.list"
+   text	   data	    bss	    dec	    hex	filename
+  20720	    108	   2156	  22984	   59c8	Proyecto Final - PCSE.elf
+Finished building: default.size.stdout
+ 
+Finished building: Proyecto Final - PCSE.list
+ 
+22:23:00 **** Incremental Build of configuration Debug for project Proyecto Final - PCSE ****
+make -j8 all 
+arm-none-eabi-size   Proyecto\ Final\ -\ PCSE.elf 
+   text	   data	    bss	    dec	    hex	filename
+  20720	    108	   2156	  22984	   59c8	Proyecto Final - PCSE.elf
+Finished building: default.size.stdout
+ 

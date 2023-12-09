@@ -24,9 +24,7 @@ void SENSOR_TEMP_init(void){
 };
 
 uint16_t SENSOR_TEMP_check(void){
-
-	HAL_ADC_PollForConversion(&hadc1, 100);
-	uint16_t tempADC = HAL_ADC_GetValue(&hadc1);
+	uint16_t tempADC = ADC_getValue();
 	float con = ((float)diff)/4095;
 	float te = (con * (float)tempADC);
 	uint8_t temp = te + Tmin;

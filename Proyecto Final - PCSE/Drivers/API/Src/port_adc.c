@@ -141,5 +141,9 @@ void HAL_ADC_MspDeInit(ADC_HandleTypeDef* adcHandle)
 }
 
 /* USER CODE BEGIN 1 */
-
+uint16_t ADC_getValue(){
+	HAL_ADC_PollForConversion(&hadc1, 100);
+	uint16_t tempADC = HAL_ADC_GetValue(&hadc1);
+	return tempADC;
+};
 /* USER CODE END 1 */
